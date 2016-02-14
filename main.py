@@ -1,11 +1,8 @@
 from request import Request
 
 def app(env, start_response):
-    # Request infos
-    r_path_info = env['PATH_INFO']
-    r_vars = env['QUERY_STRING']
-    # Creating the object 'request' and it will parse the informations
-    request = Request(r_path_info, r_vars)
+    # Create the request object
+    request = Request(env)
 
     # Import the controller requested. If not found throw a 404 error.
     try:

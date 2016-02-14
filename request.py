@@ -2,15 +2,12 @@ class Request(object):
     '''
     Class to parse and return information about the client request.
     '''
-    def __init__(self, args, vars, index='index'):
+    def __init__(self, env, index='index'):
         self.index = index
+        self.env = env
         # Parse controller, args and vars
-        self.controller, self.args = self.PathInfoParser(args)
-        self.vars = self.QueryStringParser(vars)
-
-    def __repr__(self):
-        return 'controller: {0}, args: {1}, vars: {2}'.format(self.controller,
-                                                              self.args, self.vars)
+        self.controller, self.args = self.PathInfoParser(self.env['PATH_INFO'])
+        self.vars = self.QueryStringParser(self.env['QUERY_STRING'])
 
     def PathInfoParser(self, path_info):
         '''
