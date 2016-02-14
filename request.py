@@ -2,25 +2,19 @@ class Request(object):
     '''
     Class to parse and return information about the client request.
     '''
-    def __init__(self, env, index='index'):
-        self.index = index
+
+    def __init__(self, env):
         self.env = env
-        # Parse controller, args and vars
-        self.controller, self.args = self.PathInfoParser(self.env['PATH_INFO'])
+        # Parse the infos of the request.
+        self.url = self.PathInfoParser(self.env['PATH_INFO'])
         self.vars = self.QueryStringParser(self.env['QUERY_STRING'])
 
     def PathInfoParser(self, path_info):
         '''
-        Receive path_info and parse the controller(first argument in the url),
-        and args(the rest of the arguments if any).
-        Return a tuple with (controller, args)
+        Receives path_info and returns a list within all the
+        requested path.
         '''
-        if not path_info or path_info == '/':
-            path_info = (self.index, [])
-        else:
-            path_info = [n for n in path_info.split('/') if n]
-            path_info = (path_info[0], path_info[1:])
-        return path_info
+        return [n for n in path_info.split('/') if n]
 
     def QueryStringParser(self, query_string):
         '''

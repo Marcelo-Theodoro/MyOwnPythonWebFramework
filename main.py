@@ -1,13 +1,19 @@
 from request import Request
+from router import router
+
 
 def app(env, start_response):
     # Create the request object
     request = Request(env)
 
-    # Import the controller requested. If not found throw a 404 error.
+    # Defines which controller is being requested
+    controller_requested = router(request.url)
+
     try:
-        func = getattr(__import__('controllers'), request.controller)
+        # Try to import the controller requested.
+        func = getattr(__import__('controllers'), controller_requested)
     except AttributeError:
+        # The requested controller does not exists
         start_response('404 NOT FOUND', [('Content-Type', 'text/html; charset=utf-8')])
         return [b'NOT FOUND']
 

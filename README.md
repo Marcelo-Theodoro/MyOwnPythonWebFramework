@@ -1,7 +1,7 @@
 # MyOwnPythonFramework
 
 
-A WSGI compliant (?)framework(?).
+A MVC and WSGI compliant *framework*.
 
 I DO NOT recommend use in production. I'm writing this framework for learning purpose only, at least until now.
 
@@ -9,6 +9,10 @@ I DO NOT recommend use in production. I'm writing this framework for learning pu
 # How to
 
 Clone the repository. Execute the server.py file and access http://127.0.0.1:8080/ from the web browser.
+
+You can write your on controllers in the controllers.py file.
+
+View and model are not implemented yet.
 
 
 # Files
@@ -19,11 +23,17 @@ Clone the repository. Execute the server.py file and access http://127.0.0.1:808
 
 * main.py - That's the parte that talks to the webserver. It receives the information and returns it processed.
 
+* router.py - The function that will handler url and tell to the application what controller is being requested.
+
 * controller.py - Where you define the functions(pages) of the web application.
 
 
 # TODOs
 
+* Tests.
+
 * Implement a template engine for the view.
 
 * Implement a model file.
+
+* Support to multi-apps

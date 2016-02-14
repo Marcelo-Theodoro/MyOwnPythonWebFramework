@@ -10,3 +10,4 @@ def index(request):
         'message': message,
     }
     return context
+
