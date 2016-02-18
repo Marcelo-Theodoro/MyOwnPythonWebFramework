@@ -1,9 +1,9 @@
 # MyOwnPythonFramework
 
 
-A MVC and WSGI compliant *framework*.
+A MVC and WSGI compliant *web framework*.
 
-I DO NOT recommend use in production. I'm writing this framework for learning purpose only, at least until now.
+I DO NOT recommend use in production. I'm writing this web framework for learning purpose only, at least until now.
 
 
 # How to
@@ -12,7 +12,7 @@ Clone the repository. Execute the server.py file and access http://127.0.0.1:808
 
 You can write your on controllers in the controllers.py file.
 
-View and model are not implemented yet.
+Views and models are not implemented yet.
 
 
 # Files
