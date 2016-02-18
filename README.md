@@ -36,4 +36,4 @@ Views and models are not implemented yet.
 
 * Implement a model file.
 
-* Support to multi-apps
+* Create a setup.py
