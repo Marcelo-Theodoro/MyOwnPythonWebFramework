@@ -1,14 +1,10 @@
 # MyOwnPythonWebFramework
 
 
-MVC and WSGI compliant *web framework*.
+WSGI compliant *web framework*.
 
 I DO NOT recommend use in production. I'm writing this web framework for learning purpose only.
 
-
-# How to
-
-TODO.
 
 
 # Files
