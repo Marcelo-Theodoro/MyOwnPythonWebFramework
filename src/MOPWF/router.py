@@ -3,6 +3,7 @@ def router(url, default_app='myapp', default_index='index'):
     '''
     Do the url router thing.
     Not totally implemented yet.
+
     '''
 
     if len(url) == 0:
